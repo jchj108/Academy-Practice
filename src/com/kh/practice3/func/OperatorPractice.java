@@ -157,7 +157,7 @@ public class OperatorPractice {
 		
 		Double fas = as + as * 0.4;
 		Double fbs = (double)bs;
-		Double fcs = (double)cs + (double)cs * 0.15;
+		Double fcs = cs + (double)cs * 0.15;
 		
 		
 		System.out.println("A»ç¿ø ¿¬ºÀ/¿¬ºÀ+a : " + as + "/" + fas);
