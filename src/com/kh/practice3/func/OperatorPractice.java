@@ -155,9 +155,9 @@ public class OperatorPractice {
 		System.out.printf("C»ç¿ø ¿¬ºÀ : ");
 		int cs = sc.nextInt();
 		
-		Double fas = as + as * 0.4;
+		Double fas = as * 1.4;
 		Double fbs = (double)bs;
-		Double fcs = cs + (double)cs * 0.15;
+		Double fcs = (double)cs * 1.15;
 		
 		
 		System.out.println("A»ç¿ø ¿¬ºÀ/¿¬ºÀ+a : " + as + "/" + fas);
