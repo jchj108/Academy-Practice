@@ -10,7 +10,12 @@ public class Run {
 //		op.method1();
 //		op.method4();
 //		op.method5();
-		op.method6();
+//		op.method6();
+//		op.method7();
+//		op.method8();
+//		op.method9();
+//		op.method10();
+		op.method11();
 	}
 
 }
