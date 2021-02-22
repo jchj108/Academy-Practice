@@ -159,7 +159,6 @@ public class OperatorPractice {
 		Double fbs = (double)bs;
 		Double fcs = (double)cs * 1.15;
 		
-		
 		System.out.println("A»ç¿ø ¿¬ºÀ/¿¬ºÀ+a : " + as + "/" + fas);
 		System.out.println(fas>=3000 ? "3000 ÀÌ»ó" : "3000 ¹Ì¸¸");
 		System.out.println("B»ç¿ø ¿¬ºÀ/¿¬ºÀ+a : " + bs + "/" + fbs);
