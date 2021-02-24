@@ -155,9 +155,13 @@ public class OperatorPractice {
 		System.out.printf("C사원 연봉 : ");
 		int cs = sc.nextInt();
 		
-		Double fas = as * 1.4;
-		Double fbs = (double)bs;
-		Double fcs = (double)cs * 1.15;
+		double fas = as * 1.4;
+		double fbs = (double)bs;
+		double fcs = (double)cs * 1.15;
+		double fcs1 = (double)cs + (double)cs * 0.15;
+		// 부동소수로 인해 값이 다름
+		// 부동소수 계산법 중 무한 소수가 됨
+		// 메모리의 한계로 인해 오차발생
 		
 		System.out.println("A사원 연봉/연봉+a : " + as + "/" + fas);
 		System.out.println(fas>=3000 ? "3000 이상" : "3000 미만");
@@ -165,6 +169,7 @@ public class OperatorPractice {
 		System.out.println(fbs>=3000 ? "3000 이상" : "3000 미만");
 		System.out.println("C사원 연봉/연봉+a : " + cs + "/" + fcs);
 		System.out.println(fcs>=3000 ? "3000 이상" : "3000 미만");
-	
+		System.out.println(fcs1);
+		
 	}
 }
