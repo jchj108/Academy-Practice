@@ -321,6 +321,24 @@ public class ControlPractice {
 			System.out.println("잘못 입력했습니다.");
 			break;
 		}
+	}
+	
+	public void practice11() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("비밀번호 입력(1000~9999) : ");
+		int pw = sc.nextInt();
+		String strpw = Integer.toString(pw);
+		char a = strpw.charAt(0);
+		char b = strpw.charAt(1);
+		char c = strpw.charAt(2);
+		char d = strpw.charAt(3);
 
+		if (pw>=9999 && pw<=1000) {
+			if(a==b || a==c || a==d || b==c || b==d)
+		} else {
+			System.out.println("자리수 안 맞음");
+		}
+		
 	}
 } // end of class
