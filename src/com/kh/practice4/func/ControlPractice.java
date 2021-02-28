@@ -329,16 +329,20 @@ public class ControlPractice {
 		System.out.print("비밀번호 입력(1000~9999) : ");
 		int pw = sc.nextInt();
 		String strpw = Integer.toString(pw);
-		char a = strpw.charAt(0);
-		char b = strpw.charAt(1);
-		char c = strpw.charAt(2);
-		char d = strpw.charAt(3);
-
-		if (pw>=9999 && pw<=1000) {
-			if(a==b || a==c || a==d || b==c || b==d)
+		int a = strpw.charAt(0)-'0';
+		int b = strpw.charAt(1)-'0';
+		int c = strpw.charAt(2)-'0';
+		int d = strpw.charAt(3)-'0';
+		
+		if (pw<=9999 && pw>=1000) {
+			if(a==b || a==c || a==d || b==c || b==d || c==d) {
+				System.out.println("중복값 있음");
+			} else {
+				System.out.println("성공");
+			}
 		} else {
 			System.out.println("자리수 안 맞음");
 		}
 		
-	}
+	} // end of method
 } // end of class
