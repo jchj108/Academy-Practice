@@ -224,22 +224,22 @@ public class Loop {
 		String sign = " ";
 
 		while (true) {
-			
+
 			Scanner sc = new Scanner(System.in);
 			System.out.print("연산자(+, -, *, /, %) : ");
 			sign = sc.nextLine();
-			
-			if(sign.equals("exit")) {
+
+			if (sign.equals("exit")) {
 				System.out.println("프로그램을 종료합니다.");
 				break;
 			}
-			
+
 			System.out.print("정수1 : ");
 			int num1 = sc.nextInt();
 			System.out.print("정수2 : ");
 			int num2 = sc.nextInt();
 			int result = 0;
-			boolean special = false;
+			boolean sp = false;
 
 			if (sign.equals("+")) {
 				result = num1 + num2;
@@ -250,7 +250,7 @@ public class Loop {
 			} else if (sign.equals("/")) {
 				if (num2 == 0) {
 					System.out.println("0으로 나눌 수 없습니다. 다시 입력해주세요");
-					special = true;
+					sp = true;
 				} else {
 					result = num1 / num2;
 				}
@@ -259,67 +259,117 @@ public class Loop {
 			} else {
 				System.out.println("없는 연산자입니다. 다시 입력해주세요.");
 			}
-				if(sign.equals("+")||sign.equals("-")||sign.equals("/")||
-						sign.equals("*")||sign.equals("%")) {
-					if(special==false) {
-				System.out.printf("%d %s %d = %d%n", num1, sign, num2, result);
-					}
+			if (sign.equals("+") || sign.equals("-") || sign.equals("/") || sign.equals("*") || sign.equals("%")) {
+				if (sp == false) {
+					System.out.printf("%d %s %d = %d%n", num1, sign, num2, result);
 				}
 			}
 		}
-	
+	}
+
 	public void practice13() {
-			
+
 		Scanner sc = new Scanner(System.in);
 		System.out.print("정수 입력 : ");
 		int num = sc.nextInt();
-		
-		for(int i=1; i<=num; i++) {
-			for(int j=1; j<=i; j++) {
+
+		for (int i = 1; i <= num; i++) {
+			for (int j = 1; j <= i; j++) {
 				System.out.print("*");
 			}
 			System.out.println();
 		}
 	}
-	
+
 	public void practice14() {
-		
+
 		Scanner sc = new Scanner(System.in);
 		System.out.print("정수 입력 : ");
 		int num = sc.nextInt();
-		
-		for(int i=1; i<=num; i++) {
-			for(int j=num; j>=i; j--) {
+
+		for (int i = 1; i <= num; i++) {
+			for (int j = num; j >= i; j--) {
 				System.out.print("*");
 			}
 			System.out.println();
 		}
+	}
+
+	public void practice15() {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("숫자 : ");
+		int num = sc.nextInt();
+		boolean flag = true;
+
+		if (num >= 2) {
+			for (int i = 2; i < num; i++) {
+
+				if (num % i == 0) {
+					flag = false;
+				}
+			}
+			if (flag == true) {
+				System.out.println("소수입니다");
+			} else {
+				System.out.println("소수가 아닙니다");
+			}
+		} else {
+			System.out.println("잘못 입력하셨습니다.");
+		}
+
+	}
+
+	public void practice16() {
+
+		while (true) {
+			Scanner sc = new Scanner(System.in);
+			System.out.print("숫자 : ");
+			int num = sc.nextInt();
+			int j = 0;
+
+			if (num >= 2) {
+				for (int i = 2; i < num; i++) {
+
+					if (num % i == 0) {
+						j++;
+					}
+				}
+				if (j == 0) {
+					System.out.println("소수입니다");
+					break;
+				} else {
+					System.out.println("소수가 아닙니다");
+					break;
+				}
+			} else {
+				System.out.println("잘못 입력하셨습니다.");
+			}
+		}
+	}
+
+	public void practice17() {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("숫자 : ");
+		int num = sc.nextInt();
+		boolean flag = true;
+		int pnsum = 0;
+		
+			for(int i = 2; i<=num; i++) {
+				flag = true;  // *flag를 매번 새로 참조해야 한다.
+				for(int j = 2; j<i; j++) {
+					if(i%j==0) {
+						flag = false;
+					}
+				}
+				if(flag==true) {
+					System.out.print(i + " ");
+					pnsum++;
+				}
+			}
+			System.out.println();
+			System.out.printf("2부터 %d까지 소수의 개수는 %d개입니다.", num, pnsum);
+
 	}
 }
-
-//			switch (sign) {
-//	
-//			case '+':
-//				result = num1 + num2;
-//				break;
-//			case '-':
-//				result = num1 - num2;
-//				break;
-//			case '*':
-//				result = num1 * num2;
-//				break;
-//			case '/':
-//				if (num2!=0) {
-//					result = num1 / num2;
-//					break;
-//				} else {
-//					System.out.println("0으로 나눌 수 없습니다. 다시 입력해주세요");
-//				}
-//			case '%':
-//				result = num1 % num2;
-//				break;
-//			default :
-//				System.out.println("없는 연산자입니다. 다시 입력해주세요.");
-//				break;
-//			}
-//			System.out.printf("%d %s %d = %d%n", num1, sign, num2, result);
