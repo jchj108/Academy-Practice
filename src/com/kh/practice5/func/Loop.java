@@ -355,21 +355,120 @@ public class Loop {
 		int num = sc.nextInt();
 		boolean flag = true;
 		int pnsum = 0;
-		
-			for(int i = 2; i<=num; i++) {
-				flag = true;  // *flag를 매번 새로 참조해야 한다.
-				for(int j = 2; j<i; j++) {
-					if(i%j==0) {
+
+		if (num >= 2) {
+			for (int i = 2; i <= num; i++) {
+				flag = true; // *flag를 매번 새로 참조해야 한다.
+				for (int j = 2; j < i; j++) {
+					if (i % j == 0) {
 						flag = false;
 					}
 				}
-				if(flag==true) {
+				if (flag == true) {
 					System.out.print(i + " ");
 					pnsum++;
 				}
 			}
 			System.out.println();
 			System.out.printf("2부터 %d까지 소수의 개수는 %d개입니다.", num, pnsum);
+		}
+
+		else {
+			System.out.println("잘못 입력하셨습니다.");
+		}
 
 	}
-}
+
+	public void practice18() {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("자연수 하나를 입력하세요 : ");
+		int num = sc.nextInt();
+		int multiple = 0;
+		int count = 0;
+		boolean flag = false;
+
+		for (int i = 2; i <= num; i++) {
+			flag = false;
+
+			if (i % 2 == 0) {
+				flag = true;
+			} else if (i % 3 == 0) {
+				flag = true;
+			}
+			if (flag == true) {
+				System.out.print(i + " ");
+			}
+		}
+
+		for (int i = 2; i <= num; i++) {
+			if (i % 2 == 0) {
+				if (i % 3 == 0) {
+					count++;
+				}
+			}
+
+		}
+		System.out.println();
+		System.out.println("count : " + count);
+	}
+
+	public void practice19() {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 입력 : ");
+		int num = sc.nextInt();
+
+		for (int i = 1; i <= num; i++) {
+			for (int j = num; j >= 1; j--) {
+				if (i < j) {
+					System.out.print(" ");
+				} else {
+					System.out.print("*");
+				}
+			}
+			System.out.println();
+		}
+	}
+
+	public void practice20() {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 입력 : ");
+		int num = sc.nextInt();
+
+		for (int i = num; i > 0; i--) {
+			for (int j = i; j <= num; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		for (int i = num; i > 0; i--) {
+			for (int k = 1; k < i; k++) {
+				System.out.printf("*");
+			}
+			System.out.println();
+		}
+	}
+
+	public void practice21() {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 입력 : ");
+		int num = sc.nextInt();
+
+		for (int i = 0; i < num; i++) {
+			for (int j = 0; j < num; j++) {
+
+				if (i == 0 || i == num - 1) {
+					System.out.print("*");
+				} else if (j == 0 || j == num - 1) {
+					System.out.print("*");
+				} else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
+	}
+} // end of class

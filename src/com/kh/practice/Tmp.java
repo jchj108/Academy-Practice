@@ -7,24 +7,21 @@ public class Tmp {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		System.out.print("값을 입력하세요 : ");
+		System.out.print("정수 입력 : ");
 		int num = sc.nextInt();
-		int i = 1;
-		if (num > 1) {
-			while (num >= i) {
-				System.out.print(i + " ");
-				i++;
-			while(num < 1) {
-				System.out.print("1 이상의 숫자를 입력하세요 : ");
-				num = sc.nextInt();
-					if (num>1) {
-						while(num>=i) {
-							System.out.print(i + " ");
-							i++;
-						}
-					}
+
+		for (int i = 0; i < num; i++) {
+			for (int j = 0; j < num; j++) {
+
+				if (i == 0 || i == num - 1) {
+					System.out.print("*");
+				} else if (j == 0 || j == num - 1) {
+					System.out.print("*");
+				} else {
+					System.out.print(" ");
 				}
 			}
+			System.out.println();
 		}
 	}
 }

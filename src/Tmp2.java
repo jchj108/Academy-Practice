@@ -7,28 +7,15 @@ public class Tmp2 {
 		
 	
 		Scanner sc = new Scanner(System.in);
+		System.out.println("정수 입력 : ");
 		int num =  sc.nextInt();
 		int result = num;
-		int j = 0;
 	
-			
-		
-		if(num>=2) {	
-			for(int i = 2; i<num; i++) {
-				result = num % i;
-	
-				if (num % i == 0) {
-					j++;
-				} 
+		for (int k = 0; k < num; k++) {
+			for (int l = 0; l<k*2-1; l++) {
+				System.out.print("*");
 			}
-			if (j==0) {
-				System.out.println("소수입니다");
-			} else {
-				System.out.println("소수가 아닙니다");
-			}
-		} else {
-			System.out.println("잘못 입력하셨습니다.");
+			System.out.println();
 		}
 	}
 }
-
