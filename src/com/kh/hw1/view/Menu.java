@@ -38,10 +38,13 @@ public class Menu {
 				f.totalCalculator();
 				break;
 			case 3:
+				f.printProfile();
 				break;
 			case 4:
+				f.printScore();
 				break;
 			case 5:
+				f.printStarNumber();
 				break;
 			case 6:
 				break;
