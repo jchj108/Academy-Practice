@@ -47,10 +47,13 @@ public class Menu {
 				f.printStarNumber();
 				break;
 			case 6:
+				f.sumRandom();
 				break;
 			case 7:
+				f.exceptGugu();
 				break;
 			case 8:
+				f.diceGame();
 				break;
 			case 9:
 				System.out.println("종료합니다.");
