@@ -8,7 +8,9 @@ public class Student {
 	
 	public Student() {}
 	public Student(String name, String subject, int score) {
-		
+		this.name = name;
+		this.subject = subject;
+		this.score = score;
 	}
 	
 	public void setName(String name) {
@@ -36,7 +38,7 @@ public class Student {
 	}
 
 	public String inform() {
-		return name + subject + score;
+		return "이름 : " + name + " / 과목 : " + subject + " / 점수 : " + score;
 	}
 	
 	
