@@ -86,7 +86,29 @@ public class Employee {
 	}
 
 	public String printEmployee() {
+		String print = "";
+		if(empNo != 0) {
+			print += empNo + "\t";
+		}
+		if(name != null) {
+			print += name + "\t";
+		}
+		if(gender != '\u0000') {
+			print += gender + "\t";
+		}
+		if(phone != null) {
+			print += phone + "\t";
+		}
+		if(dept != null) {
+			print += dept + "\t";
+		}
+		if(salary != 0) {
+			print += salary + "\t";
+		}
+		if(bonus != 0.0) {
+			print += bonus + "\t";
+		}
 		
-		return
+		return print;
 	}
 }

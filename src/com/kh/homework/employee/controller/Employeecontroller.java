@@ -13,12 +13,14 @@ public class Employeecontroller {
 		e.setPhone(phone);
 	}
 
-	public void add(int empNo, String name, char gender, String phone, String dept) {
+	public void add(int empNo, String name, char gender, String phone, String dept, int salary, double bonus) {
 		e.setEmpNo(empNo);
 		e.setName(name);
 		e.setGender(gender);
 		e.setPhone(phone);
 		e.setDept(dept);
+		e.setSalary(salary);
+		e.setBonus(bonus);
 	}
 
 	public void modify(String phone) {
@@ -39,6 +41,10 @@ public class Employeecontroller {
 	}
 	
 	public String inform() {
-		
+		if (e == null || e.printEmployee().equals("")) {
+			return null;
+		} else {
+			return e.printEmployee();
+		}
 	}
 }
