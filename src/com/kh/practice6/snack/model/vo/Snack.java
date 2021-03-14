@@ -1,4 +1,4 @@
-package com.kh.practice7.snack.model.vo;
+package com.kh.practice6.snack.model.vo;
 
 public class Snack {
 
@@ -19,44 +19,44 @@ public class Snack {
 		this.price = price;
 	}
 
-	public String getKind() {
-		return kind;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public String getFlavor() {
-		return flavor;
-	}
-
-	public int getNumOf() {
-		return numOf;
-	}
-
-	public int getPrice() {
-		return price;
-	}
-
 	public void setKind(String kind) {
 		this.kind = kind;
+	}
+
+	public String getKind() {
+		return kind;
 	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	public String getName() {
+		return name;
+	}
+
 	public void setFlavor(String flavor) {
 		this.flavor = flavor;
+	}
+
+	public String getFlavor() {
+		return flavor;
 	}
 
 	public void setNumOf(int numOf) {
 		this.numOf = numOf;
 	}
 
+	public int getNumOf() {
+		return numOf;
+	}
+
 	public void setPrice(int price) {
 		this.price = price;
+	}
+
+	public int getPrice() {
+		return price;
 	}
 
 	public String information() {
