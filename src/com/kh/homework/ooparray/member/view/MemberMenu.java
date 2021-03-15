@@ -3,6 +3,7 @@ package com.kh.homework.ooparray.member.view;
 import java.util.Scanner;
 
 import com.kh.homework.ooparray.member.controller.MemberController;
+import com.kh.homework.ooparray.member.model.vo.Member;
 
 public class MemberMenu {
 
@@ -153,10 +154,70 @@ public class MemberMenu {
 		}
 		System.out.println();
 	}
-	
+
 	public void searchId() {
-		
-		
-		
+
+		System.out.println("검색할 아이디 : ");
+		String id = sc.next();
+		String result = mc.searchId(id);
+
+		if (result == null) {
+			System.out.println("검색 결과가 없습니다");
+		} else {
+			System.out.println("찾으신 회원 조회 결과입니다.");
+			System.out.println(result);
+		}
+		System.out.println();
 	}
+
+	public void searchName() {
+		System.out.print("검색할 이름 : ");
+		String name = sc.next();
+		Member[] result = mc.searchName(name);
+		int count = 0;
+		for (int i = 0; i < result.length; i++) {
+			if (result[i] != null) {
+				count++;
+				break;
+			}
+		}
+
+		if (count == 0) {
+			System.out.println("검색 결과가 없습니다.");
+		} else {
+			System.out.println("찾으신 회원 조회 결과입니다.");
+			for (int i = 0; i < result.length; i++) {
+				if (result[i] != null) {
+					System.out.println(result[i].inform());
+				}
+			}
+		}
+		System.out.println();
+	}
+
+	public void searchEmail() {
+		System.out.print("검색할 이메일 : ");
+		String email = sc.next();
+		Member[] result = mc.searchEmail(email);
+		int count = 0;
+		for (int i = 0; i < result.length; i++) {
+			if (result[i] != null) {
+				count++;
+				break;
+			}
+		}
+
+		if (count == 0) {
+			System.out.println("검색 결과가 없습니다.");
+		} else {
+			System.out.println("찾으신 회원 조회 결과입니다.");
+			for (int i = 0; i < result.length; i++) {
+				if (result[i] != null) {
+					System.out.println(result[i].inform());
+				}
+			}
+		}
+		System.out.println();
+	}
+
 }

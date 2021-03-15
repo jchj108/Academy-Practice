@@ -55,26 +55,28 @@ public class MemberController {
 		return null;
 	}
 
-	public String searchName(String name) {
-		for (int i = 0; i < m.length; i++) {
-			if (m[i] != null) {
-				if (m[i].getName().equals(name)) {
-					return m[i].inform();
+	public Member[] searchName(String name) {
+		Member[] result = new Member[SIZE];
+		for(int i = 0; i < m.length; i++) {
+			if(m[i] != null) {
+				if(m[i].getName().equals(name)) {
+					result[i] = m[i];
 				}
 			}
 		}
-		return null;
+		return result;
 	}
 
-	public String searchEmail(String email) {
-		for (int i = 0; i < m.length; i++) {
-			if (m[i] != null) {
-				if (m[i].getName().equals(email)) {
-					return m[i].inform();
+	public Member[] searchEmail(String email) {
+		Member[] result = new Member[SIZE];
+		for(int i = 0; i < m.length; i++) {
+			if(m[i] != null) {
+				if(m[i].getEmail().equals(email)) {
+					result[i] = m[i];
 				}
 			}
 		}
-		return null;
+		return result;
 	}
 
 	public boolean updatePassword(String id, String password) {
