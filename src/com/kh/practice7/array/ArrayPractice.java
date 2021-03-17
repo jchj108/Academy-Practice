@@ -247,42 +247,89 @@ public class ArrayPractice {
 	public void practice14() {
 
 		// 정렬 알고리즘 숙지
-		
+
 		int[] arr = new int[6];
 
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = (int) (Math.random() * 45) + 1;
 			for (int j = 0; j < i; j++) {
-				if(arr[i] == arr[j]) {
+				if (arr[i] == arr[j]) {
 					i--;
 					break;
 				}
 
-			if (arr[i] < arr[j]) {
-				int tmp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = tmp;
+				if (arr[i] < arr[j]) {
+					int tmp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = tmp;
+				}
+
 			}
-			
-			}
-			
+
 		}
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+
+	}
+
+	public void practice15() {
+
+//		??
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("문자열 : ");
+		String str = sc.nextLine();
+		char[] arr = new char[str.length()];
+
+		for (int i = 0; i < str.length(); i++) {
+			arr[i] = str.charAt(i);
+
+		}
+
+	}
+
+	public void practice16() {
+
+		String yn = null;
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("배열의 크기를 입력하세요 : ");
+		int num = Integer.parseInt(sc.nextLine());
+		String[] arr = new String[num];
+
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(i + 1 + "번째 문자열 : ");
+			arr[i] = sc.nextLine();
+		}
+
+		do {
+			System.out.print("더 값을 입력하시겠습니까(Y/N)");
+			yn = sc.nextLine();
+
+			if (yn.toUpperCase().equals("Y")) {
+				System.out.print("더 입력하고 싶은 개수 : ");
+				int add = Integer.parseInt(sc.nextLine());
+				String[] copyArr = new String[arr.length+add];
+				System.arraycopy(arr, 0, copyArr, 0, arr.length);
+				
+				for(int i = arr.length; i<copyArr.length; i++) {
+					System.out.println((i+1) + "번째 문자열 : ");
+					copyArr[i] = sc.nextLine();
+					
+				}
+				
+				arr=copyArr;
+				
+				
+			}
+
+		} while (!yn.toUpperCase().equals("N"));
+
 		for(int i = 0; i<arr.length; i++) {
 			System.out.print(arr[i] + " ");
 		}
-		
 	}
-	
-	public void practice15() {
-		
-		Scanner sc = new Scanner(System.in);
-		
-		String str = sc.nextLine();
-		char[] arr = new char[str.length()];
-		
-		for(int i = 0; i<str.length(); i++) {
-			arr[i] = str.charAt(i);
-		}
-		
-	}
+
 }
