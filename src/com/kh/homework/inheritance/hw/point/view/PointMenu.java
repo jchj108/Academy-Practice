@@ -17,9 +17,9 @@ public class PointMenu {
 			System.out.println("메뉴 번호 : ");
 			int menu = sc.nextInt();
 			
-			switch(menu ) {
+			switch(menu) {
 			
-			
+			case 1
 			
 			
 			}

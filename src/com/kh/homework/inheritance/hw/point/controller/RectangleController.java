@@ -10,8 +10,15 @@ public class RectangleController {
 		
 		r = new Rectangle(x, y, height, width);
 		
+		return r + " / " + (height * width);
 		
-		return 
+	}
+	
+	public String calcPerimeter(int x, int y, int height, int width) {
+		
+		r = new Rectangle(x, y, height, width);
+		
+		return r + " / " + 2 * (height + width);
 		
 	}
 	
