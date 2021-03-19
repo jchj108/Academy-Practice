@@ -33,6 +33,6 @@ public class Rectangle extends Point {
 	
 	@Override
 	public String toString() {
-		return super.toString() + width + height;
+		return super.toString() + ", " + width + ", " + height;
 	}
 }

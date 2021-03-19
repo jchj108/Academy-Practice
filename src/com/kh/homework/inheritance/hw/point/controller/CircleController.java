@@ -10,7 +10,7 @@ public class CircleController {
 
 		c = new Circle(x, y, radius);
 
-		return c + " / " + Math.PI * (2 * radius);
+		return c + " / " + Math.PI * (radius * radius);
 
 	}
 
@@ -18,7 +18,7 @@ public class CircleController {
 
 		c = new Circle(x, y, radius);
 
-		return c + " / " + Math.PI * radius * 2;
+		return c + " / " + Math.PI * (radius * 2);
 
 	}
 }

@@ -1,6 +1,7 @@
 package com.kh.homework.inheritance.hw.point.model.vo;
 
 public class Point {
+		
 	
 	private int x;
 	private int y;
@@ -30,7 +31,7 @@ public class Point {
 	}
 	
 	public String toString() {
-		return x + " " + y;
+		return x + ", " + y;
 	}
 	
 }
