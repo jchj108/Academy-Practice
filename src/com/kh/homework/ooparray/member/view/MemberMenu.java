@@ -220,4 +220,147 @@ public class MemberMenu {
 		System.out.println();
 	}
 
+	public void updateMember() {
+
+		System.out.println("1. 비밀번호 수정하기");
+		System.out.println("2. 이름 수정하기");
+		System.out.println("3. 이메일 수정하기");
+		System.out.println("9. 메인으로 돌아가기");
+
+		int num = sc.nextInt();
+
+		switch (num) {
+
+		case 1:
+			updatePassword();
+			break;
+		case 2:
+			updateName();
+			break;
+		case 3:
+			updateEmail();
+			break;
+		case 9:
+			System.out.println("메인으로 돌아갑니다.");
+			break;
+		default:
+			System.out.println("잘못 입력하셨습니다.");
+			System.out.println();
+		}
+
+	}
+
+	public void updatePassword() {
+
+		System.out.println("수정할 회원의 아이디 : ");
+		String id = sc.nextLine();
+		System.out.println("수정할 비밀번호 : ");
+		String password = sc.nextLine();
+		boolean check = mc.updatePassword(id, password);
+		if (check) {
+			System.out.println("수정이 성공적으로 되었습니다.");
+		} else {
+			System.out.println("존재하지 않는 아이디입니다.");
+		}
+		System.out.println();
+	}
+
+	public void updateName() {
+		System.out.print("수정할 회원의 아이디 : ");
+		String id = sc.next();
+		System.out.print("수정할 이름 : ");
+		String name = sc.next();
+		boolean check = mc.updateName(id, name);
+		if (check) {
+			System.out.println("수정이 성공적으로 되었습니다.");
+		} else {
+			System.out.println("존재하지 않는 아이디입니다.");
+		}
+		System.out.println();
+	}
+
+	public void updateEmail() {
+		System.out.print("수정할 회원의 아이디 : ");
+		String id = sc.next();
+		System.out.print("수정할 이메일 : ");
+		String email = sc.next();
+		boolean check = mc.updateEmail(id, email);
+		if (check) {
+			System.out.println("수정이 성공적으로 되었습니다.");
+		} else {
+			System.out.println("존재하지 않는 아이디입니다.");
+		}
+		System.out.println();
+	}
+
+	public void deleteMember() {
+		System.out.println("1. 특정 회원 삭제하기");
+		System.out.println("2. 모든 회원 삭제하기");
+		System.out.println("9. 메인으로 돌아가기");
+		int menuNum = sc.nextInt();
+		switch (menuNum) {
+		case 1:
+			deleteOne();
+			break;
+		case 2:
+			deleteAll();
+			break;
+		case 9:
+			System.out.println("메인으로 돌아갑니다.");
+		default:
+			System.out.println("잘못 입력하셨습니다.");
+		}
+		System.out.println();
+	}
+	public void deleteOne() {
+		System.out.print("정말 삭제하시겠습니까(y/n) : ");
+		String yn = sc.next();
+		
+		if(yn.toLowerCase().equals("y")) {
+			System.out.print("아이디를 입력하세요 : ");
+			String id = sc.next();
+			boolean check = mc.delete(id);
+			
+			if(check) {
+				System.out.println("성공적으로 삭제하였습니다.");
+			} else {
+				System.out.println("존재하지 않는 아이디입니다.");
+			}
+		}
+	}
+	
+	public void deleteAll() {
+		System.out.print("정말 삭제하시겠습니까(y/n) : ");
+		String yn = sc.next();
+		
+		if(yn.toLowerCase().equals("y")) {
+			mc.delete();
+			System.out.println("성공적으로 삭제하였습니다.");
+		}
+		System.out.println();
+	}
+	
+	public void printAll() {
+		Member[] m = mc.printAll();
+		
+		int num = mc.existMemberNum();
+		
+		if(num == 0) {
+			System.out.println("저장된 회원이 없습니다.");
+		} else {
+			for(int i = 0; i<m.length; i++) {
+				if(m[i] != null) {
+				System.out.println(m[i].inform());
+				}
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
 }

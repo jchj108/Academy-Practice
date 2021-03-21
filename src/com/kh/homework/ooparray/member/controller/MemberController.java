@@ -103,7 +103,7 @@ public class MemberController {
 		return false;
 	}
 
-	public boolean updageEmail(String id, String email) {
+	public boolean updateEmail(String id, String email) {
 		for (int i = 0; i < m.length; i++) {
 			if (m[i] != null) {
 				if (m[i].getId().equals(id)) {
