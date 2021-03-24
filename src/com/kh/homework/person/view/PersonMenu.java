@@ -3,6 +3,7 @@ package com.kh.homework.person.view;
 import java.util.Scanner;
 
 import com.kh.homework.person.controller.PersonController;
+import com.kh.homework.person.model.vo.Employee;
 import com.kh.homework.person.model.vo.Student;
 
 public class PersonMenu {
@@ -60,14 +61,14 @@ public class PersonMenu {
 					System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
 				} else {
 					insertStudent();
-					break;
 				}
+				break;
 			case 2:
 				printStudent();
 				break;
 			case 9:
 				System.out.println("메인으로 돌아갑니다.");
-				return;
+				break;
 			default:
 				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
 			}
@@ -94,8 +95,8 @@ public class PersonMenu {
 					System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
 				} else {
 					insertEmployee();
-					break;
 				}
+				break;
 			case 2:
 				pc.printEmployee();
 				break;
@@ -130,7 +131,7 @@ public class PersonMenu {
 
 			if (pc.personCount()[0] == 3) {
 				System.out.println("학생을 담을 수 있는 공간이 꽉 찼기 때문에 학생 추가를 종료하고 학생 메뉴로 돌아갑니다");
-				return;
+				break;
 			} else {
 				System.out.print("그만하시려면 N(또는 n), 이어하시려면 아무 키나 누르세요 :");
 				user = sc.nextLine();
@@ -155,10 +156,46 @@ public class PersonMenu {
 
 	public void insertEmployee() {
 
+		String user = null;
+
+		do {
+			System.out.println("사원 이름 : ");
+			String name = sc.nextLine();
+			System.out.println("사원 나이 : ");
+			int age = Integer.parseInt(sc.nextLine());
+			System.out.println("사원 키 : ");
+			double height = Double.parseDouble(sc.nextLine());
+			System.out.println("사원 몸무게 : ");
+			double weight = Double.parseDouble(sc.nextLine());
+			System.out.println("사원 급여 : ");
+			int salary = Integer.parseInt(sc.nextLine());
+			System.out.println("사원 부서 : ");
+			String dept = sc.nextLine();
+
+			pc.insertEmployee(name, age, height, weight, salary, dept);
+
+			if (pc.personCount()[1] == 10) {
+				System.out.println("사원을 담을 수 있는 공간이 꽉 찼기 때문에 사원 추가를 종료하고 사원 메뉴로 돌아갑니다.");
+				return;
+			} else {
+				System.out.println("그만하시려면 N(또는 n), 이어하시려면 아무 키나 누르세요 : ");
+				user = sc.nextLine();
+			}
+
+		} while (!user.toUpperCase().equals("N"));
 	}
 
 	public void printEmployee() {
 
-	}
+		Employee[] empArr = pc.printEmployee();
 
+		for (int i = 0; i < empArr.length; i++) {
+			if(empArr[i]==null) {
+				break;
+			} else {
+				
+			System.out.println(empArr[i]);
+		}
+		}
+	}
 }

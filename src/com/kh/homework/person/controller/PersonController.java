@@ -1,6 +1,6 @@
 package com.kh.homework.person.controller;
 
-import com.kh.homework.employee.model.vo.Employee;
+import com.kh.homework.person.model.vo.Employee;
 import com.kh.homework.person.model.vo.Student;
 
 public class PersonController {
@@ -42,11 +42,15 @@ public class PersonController {
 	}
 
 	public void insertEmployee(String name, int age, double height, double weight, int salary, String dept) {
-
+		for(int i = 0; i < e.length; i++) {
+			if(e[i] == null) {
+				e[i] = new Employee(name, age, height, weight, salary, dept);
+				break;
+			}
+		}
 	}
 
 	public Employee[] printEmployee() {
-
+		return e;
 	}
-
 }
