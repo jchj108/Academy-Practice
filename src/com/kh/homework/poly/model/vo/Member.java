@@ -41,9 +41,17 @@ public class Member {
 		this.gender = gender;
 	}
 	
+	public int getCouponCount() {
+		return couponCount;
+	}
+
+	public void setCouponCount(int couponCount) {
+		this.couponCount = couponCount;
+	}
+
 	@Override
 	public String toString() {
-		return name + ", " + age + ", " + gender;
+		return name + " / " + age + " / " + gender;
 	}
 
 }

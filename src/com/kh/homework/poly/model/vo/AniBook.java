@@ -23,6 +23,6 @@ public class AniBook extends Book {
 
 	@Override
 	public String toString() {
-		return super.toString() + accessAge;
+		return super.toString() + " / " + accessAge;
 	}
 }
