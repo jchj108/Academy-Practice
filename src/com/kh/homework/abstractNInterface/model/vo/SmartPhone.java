@@ -16,5 +16,4 @@ public abstract class SmartPhone implements Phone, TouchDisplay {
 		return maker;
 	}
 	public abstract String printInformation();
-
 }
