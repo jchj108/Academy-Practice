@@ -18,7 +18,26 @@ public class Book {
 		this.price = price;
 	}
 
-	public int
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+	
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return super.equals(obj);
+	}
+	
+	public int compareTo() {
+		
+	}
 	
 	public String getTitle() {
 		return title;
