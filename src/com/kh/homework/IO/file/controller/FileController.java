@@ -13,7 +13,7 @@ public class FileController {
 		
 	}
 	public StringBuilder fileOpen(String file) {
-		
+		s
 	}
 	public void fileEdit(String file, StringBuilder sb) {
 		
