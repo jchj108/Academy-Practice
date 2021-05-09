@@ -92,13 +92,27 @@ public class FileMenu {
 	}
 
 	public void fileEdit() {
-		System.out.println("수정할 파일 명 : ");
+		System.out.print("수정할 파일 명 : ");
 		String file = sc.nextLine();
-		boolean check = fc.checkName(file);
 		
-		if(check) {
+		boolean b = fc.checkName(file);
+		if(b) {
 			
+			StringBuilder sb = new StringBuilder();
+			String user = null;
+			do {
+				System.out.println("파일에 저장할 내용을 입력하세요");
+				System.out.println("ex끝it  이라고 입력하면 종료됩니다.");
+				System.out.print("내용 : ");
+				user = sc.nextLine();
+				if(!user.equalsIgnoreCase("ex끝it")) {
+					sb.append(user + "\n");
+				}
+			} while(!user.equalsIgnoreCase("ex끝it"));
+			
+			fc.fileEdit(file, sb);
+		} else {
+			System.out.println("없는 파일입니다.");
 		}
 	}
-
 }
